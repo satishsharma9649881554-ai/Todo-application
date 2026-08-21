@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+<body class="bg-pink-100 min-h-screen p-6">
+
+    <div class="max-w-2xl mx-auto">
+
+        <h1 class="text-3xl font-bold text-slate-800 text-center mb-8">
+            My Todo List
+        </h1>
+                         <form action="/create">
+                        <button  type="submit" 
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-xl transition-colors cursor-pointer shadow-sm shadow-blue-200"
+            >back</button>
+                        </form>
+
+        <div class="space-y-3">
+
+            <% todoes.forEach(todo => { %>
+
+                <div class="bg-pink-300 p-4 rounded-xl shadow flex items-center justify-between">
+                   
+
+                    <h2 class="text-lg font-medium text-slate-700">
+                        <%= todo.title %>
+                    </h2>
+                    <div class="flex gap-4">
+                        <form action="/create/<%= todo._id %>/edit">
+                       <button 
+                type="submit" 
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-2.5 py-0.5 rounded-xl transition-colors cursor-pointer shadow-sm shadow-blue-200"
+            >
+                Edit
+            </button>
+                        </form>
+                        <form method="post" action="/create/<%= todo._id %>?_Method=DELETE">
+                      <button 
+                type="submit" 
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-2.5 py-0.5 rounded-xl transition-colors cursor-pointer shadow-sm shadow-blue-200"
+            >
+                Delete
+            </button>
+            </form>
+                      </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+</body>
+</html>

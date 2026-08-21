@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/output.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-pink-100 via-white to-blue-100">
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <form method="post" action="/create/<%= todoid._id %>?_Method=PATCH"
+      class="w-full max-w-lg bg-white p-6 sm:p-8 rounded-2xl shadow-xl">
+      <h1 class="text-2xl sm:text-3xl font-bold text-slate-800 text-center mb-6">
+        Edit Todo
+      </h1>
+      <input
+        type="text"
+        name="title"
+        value="<%= todoid.title %>"
+        placeholder="Edit your todo"
+        class="w-full h-12 px-4 border-2 border-slate-200 rounded-xl
+               outline-none focus:border-blue-500 focus:ring-2
+               focus:ring-blue-200 transition">
+      <button
+        type="submit"
+        class="w-full mt-4 h-12 bg-blue-600 hover:bg-blue-700
+               text-white font-semibold rounded-xl transition
+               active:scale-[0.98]"
+      >
+        Update Todo
+      </button>
+
+    </form>
+
+  </div>
+
+</body>
+    
+
+</html>
